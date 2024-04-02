@@ -16,8 +16,8 @@ public class College {
 		String[] COMP = new String[50];
 		String[] STAT = new String[50];
 		String[] APMTH = new String[50];
-		String filepath="/Users/nithya/Downloads/student-master-list (1).csv";
-		BufferedReader Reader = new BufferedReader(new FileReader(filepath));
+		String filename ="student-master-list.csv";
+		BufferedReader Reader = new BufferedReader(new FileReader(filename));
 		String line;
 		while((line=Reader.readLine())!=null){
 			String[] students = line.split(",");
@@ -42,6 +42,7 @@ public class College {
 		writeToFiles(COMP,"course1.csv");
 		writeToFiles(STAT,"course2.csv");
 		writeToFiles(APMTH,"course3.csv");
+		Reader.close();
 	}
 	
 	private static void getInfo(String[] studentcourse, String studentinfo) {
@@ -71,6 +72,7 @@ public class College {
              }
          }
          writer.close();
+        
 	}
 }
 
